@@ -11,7 +11,7 @@ import com.example.bark.model.Puppy
 import kotlinx.coroutines.flow.Flow
 
 class PuppyViewModel : ViewModel() {
-    val puppy: Flow<PagingData<Puppy>> = Pager(PagingConfig(pageSize = 6)) {
+    val puppies: Flow<PagingData<Puppy>> = Pager(PagingConfig(pageSize = 6)) {
         PuppySource()
     }.flow.cachedIn(viewModelScope)
 }
